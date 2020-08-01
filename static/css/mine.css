@@ -1,0 +1,25 @@
+
+.profile{
+    border: solid 1px #cccccc;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.Slogo{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+
+.field{
+    margin: 10px 2px;
+    border: solid 1px #cccccc;
+    color: black;
+}
+
+.form-btn:hover{
+    background-color: #ff780d;
+}

@@ -1,0 +1,179 @@
+{% load static %}
+
+
+{% include 'inc/head.inc.html' %}
+
+<body>
+
+  <div class="site-wrap">
+
+    {% include 'inc/navbar.inc.html' %}
+
+
+
+    
+
+    <div class="hero overlay" style="background-image: url('../static/images/bg_1.jpg');">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 ml-auto text-center">
+            <img src="media/{{LEAGUE.league_logo}}" class="my-4 Slogo" alt="">
+
+            <h2 class="text-white my-4"><b>{{LEAGUE.league_name}}</b></h2>
+            <p>{{LEAGUE.league_more_info}}</p>
+            <br>
+            <div class="row">
+                
+                <div class="col-sm-4">
+                    <h3 class="text-primary my-3">Address</h3>
+                    <p>{{LEAGUE.league_address}}</p>
+                </div>
+
+                <div class="col-sm-4">
+                    <h3 class="text-primary my-3">Number</h3>
+                    <p>{{LEAGUE.league_number}}</p>
+                </div>
+
+                <div class="col-sm-4">
+                    <h3 class="text-primary my-3">Started on</h3>
+                    <p>{{LEAGUE.added_date}}</p>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+    <!-- <div class="container">
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          
+          <div class="d-flex team-vs">
+            <span class="score">4-1</span>
+            <div class="team-1 w-50">
+              <div class="team-details w-100 text-center">
+                <img src="{% static 'images/logo_1.png' %}" alt="Image" class="img-fluid">
+                <h3>LA LEGA <span>(win)</span></h3>
+                <ul class="list-unstyled">
+                  <li>Anja Landry (7)</li>
+                  <li>Eadie Salinas (12)</li>
+                  <li>Ashton Allen (10)</li>
+                  <li>Baxter Metcalfe (5)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="team-2 w-50">
+              <div class="team-details w-100 text-center">
+                <img src="{% static 'images/logo_2.png' %}" alt="Image" class="img-fluid">
+                <h3>JUVENDU <span>(loss)</span></h3>
+                <ul class="list-unstyled">
+                  <li>Macauly Green (3)</li>
+                  <li>Arham Stark (8)</li>
+                  <li>Stephan Murillo (9)</li>
+                  <li>Ned Ritter (5)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+
+    <!-- All leagues section -->
+
+
+    <div class="latest-news">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 title-section">
+            <h1 class="heading" style="font-size: 30px;">All Divisions of this league</h1>
+          </div>
+        </div>
+        <div class="row">
+          {% if not DIVISIONS %}
+            <h2 class="my-5 mx-2">No Division exists in this league</h2>
+          {% endif %}
+
+          {% for division in DIVISIONS %}
+          <div class="col-sm-4 my-3">
+              <div class="profile">
+                <h4 class="my-3">
+                  <b>{{division.division_name}}</b>
+
+                </h4>
+
+                <!-- <div class="text-center" style="margin: auto;">
+                  <h5 class="my-3 bg-black text-white text-center" style="border-radius: 5px; color:white; width: fit-content; padding: 10px; margin: auto;">
+                    {{league.league_number}}
+  
+                  </h5>
+                </div> -->
+
+                
+
+                <div class="row mx-2 my-3 text-left">
+                  
+                    <div class="col-sm-12">
+                      <h5 class="text-primary my-2">
+                        <b>
+                          Added on
+                        </b>
+                      </h5>
+
+                      <h6>
+                        {{division.added_date}}
+                      </h6>
+
+                      
+                    </div>
+
+                    
+                </div>
+
+                <!-- <div class="row px-3 pb-3">
+                  
+                  <div class="col-sm-12">
+                   
+                      <button type="button" name="" id="" class="btn btn-primary btn-block">More details</button>
+
+                  
+
+                  </div>
+                </div> -->
+
+              </div>
+          </div>
+          {% endfor %}
+         
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <!-- end leagues section -->
+
+
+
+    {% include 'inc/footer.inc.html' %}
+
+
+
+
+  </div>
+  <!-- .site-wrap -->
+
+  {% include 'inc/bottomLinks.inc.html' %}
+
+</body>
+
+</html>
